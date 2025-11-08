@@ -1,0 +1,192 @@
+
+#main-button {
+  align-items: center;
+}
+#main-div {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 100;
+}
+#main-button,
+#main-button ~ a,
+#main-button ~ button {
+  right: 0;
+  height: 50px;
+  cursor: pointer;
+}
+#main-button,
+#main-button ~ a,
+#main-button ~ button {
+  position: absolute;
+  bottom: 0;
+}
+#main-div .fa-phone-alt {
+  margin-right: 8px;
+}
+#main-button {
+  display: flex;
+  justify-content: center;
+  width: 50px;
+  font-size: 20px;
+  color: #0064f3;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border: 1px solid var(--color-blue-dark) !important;
+}
+#main-button ~ button {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  visibility: hidden;
+  font-weight: 600;
+  padding: 0 20px;
+  color: #fff;
+  background: linear-gradient(90deg, #00a1f5, #0064f3);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border: 0;
+  z-index: -1;
+  opacity: 0;
+  white-space: nowrap;
+  transition: 0.2s linear;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -ms-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+  border-radius: var(--real-border-radius);
+  -webkit-border-radius: var(--real-border-radius);
+  -moz-border-radius: var(--real-border-radius);
+  -ms-border-radius: var(--real-border-radius);
+  -o-border-radius: var(--real-border-radius);
+}
+#main-button.open ~ button {
+  visibility: visible;
+  z-index: 100;
+  right: 70px;
+  opacity: 1;
+  transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+  -webkit-transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+  -moz-transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+  -ms-transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+  -o-transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+}
+#main-button ~ a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+  width: 50px;
+  font-size: 20px;
+  opacity: 0;
+  text-decoration: none;
+  color: #fff;
+  background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: 0.2s linear;
+  -webkit-transition: 0.2s linear;
+  -moz-transition: 0.2s linear;
+  -ms-transition: 0.2s linear;
+  -o-transition: 0.2s linear;
+}
+#main-button ~ .telegram-color {
+  background: linear-gradient(0deg, #017ab1, #01abe6);
+}
+#main-button ~ .whatsapp-color {
+  background: linear-gradient(0deg, #00b100, #09db09);
+}
+#main-button ~ .messenger-color {
+  background: linear-gradient(0deg, #0078ff, #00c6ff);
+}
+#main-button.open ~ a {
+  opacity: 1;
+  transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+  -webkit-transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+  -moz-transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+  -ms-transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+  -o-transition: 0.4s cubic-bezier(0, 0.01, 0, 1.27);
+}
+#main-button.open ~ a:first-of-type {
+  bottom: 60px;
+}
+#main-button.open ~ a:nth-of-type(2) {
+  bottom: 120px;
+}
+#main-button.open ~ a:nth-of-type(3) {
+  bottom: 180px;
+}
+.wave {
+  animation-name: wave;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes wave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+}
+.open {
+  animation-iteration-count: 1;
+}
+#main-div a {
+  display: flex;
+  color: white;
+  font-size: 22px;
+  transition: all 0.3s ease;
+}
+
+/* ÐžÐ±Ñ‰Ð¸Ð¹ ÑÑ‚Ð¸Ð»ÑŒ Ð´Ð»Ñ Ð²ÑÐ¿Ð»Ñ‹Ð²Ð°ÑŽÑ‰ÐµÐ³Ð¾ Ñ‚ÐµÐºÑÑ‚Ð° */
+#main-div a::after {
+content: attr(data-label);
+    position: absolute;
+    right: 70px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.3s ease;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 600;
+    /* padding: 0 20px; */
+    color: #fff;
+    background: linear-gradient(90deg, #00a1f5, #0064f3);
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    border: 0;
+    font-size: 16px;
+    width: max-content;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 23px;
+    min-width: 188px;
+}
+
+#main-div a:hover::after {
+  opacity: 1;
+}
+.telegram-color::after {
+  background: #0088cc!important;
+}
+.whatsapp-color::after {
+  background: #25d366!important;
+}
+.messenger-color::after {
+  background: #1877f2!important; 
+}
