@@ -220,6 +220,12 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  else{
+    const heroNav = document.querySelector(".hero-nav");
+    if (heroNav) {
+      heroNav.classList.add("active");
+    }
+  }
 });
 
 document.addEventListener("DOMContentLoaded", function () {
