@@ -1396,11 +1396,11 @@ header {
   -moz-transition: 0.2s linear;
   -ms-transition: 0.2s linear;
   -o-transition: 0.2s linear;
-  border-radius: var(--real-border-radius);
-  -webkit-border-radius: var(--real-border-radius);
-  -moz-border-radius: var(--real-border-radius);
-  -ms-border-radius: var(--real-border-radius);
-  -o-border-radius: var(--real-border-radius);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
 }
 #main-button.open ~ button {
   visibility: visible;
@@ -1821,13 +1821,16 @@ header {
 .section-2-cards {
   margin: 45px auto 45px;
   display: flex;
+  align-items: stretch;
   flex-wrap: wrap;
+  row-gap: 20px;
   justify-content: center;
   flex-grow: 2;
 }
 .section-2-card {
-  width: 280px;
+  min-height: 309px;
   background-color: white;
+  height: 100%;
   padding: 28px 25px;
   border-radius: 16px;
 }
@@ -1866,7 +1869,6 @@ header {
   .section-2-card {
     display: flex;
     align-items: center;
-    width: 49%;
   }
   .section-2-card-img {
     background-repeat: no-repeat;
@@ -1928,8 +1930,12 @@ span {
 .section-2-cards {
   width: 100%;
   max-width: 1400px;
-  gap: 10px;
+
   margin: 0 auto;
+}
+.section-2-cards .col-md-3 {
+  padding-inline: 8px;
+  min-height: 309px;
 }
 .cupp {
   width: 42px;
@@ -2301,4 +2307,112 @@ section h1 {
 canvas,
 img {
   overflow: hidden;
+}
+
+/* vakansii */
+/*vakansii*/
+
+.item-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 3px;
+  color: black;
+  text-decoration:none;
+  overflow: hidden;
+}
+.cards-list {
+  font-size: 14px;
+  margin-top: 20px;
+}
+.cards-list ul {
+  padding: 8px 8px 8px 16px;
+  list-style: disc;
+}
+.cards-list li {
+  margin-bottom: 10px;
+  font-size: 16px !important;
+  list-style: disc;
+}
+.item-card__title {
+  display: -webkit-box; /* Включаем flex-контейнер в виде вебкит-бокса */
+  -webkit-box-orient: vertical; /* Ориентация бокса — вертикальная */
+  -webkit-line-clamp: 2; /* Максимум 2 строки */
+  overflow: hidden; /* Скрываем переполнение */
+  text-overflow: ellipsis; /* Добавляем троеточие в конце обрезанной строки */
+}
+
+.cards-list {
+  margin-top: 16px;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+}
+
+.cards-list li {
+  -webkit-box-orient: vertical; /* Ориентация бокса — вертикальная */
+  -webkit-line-clamp: 1; /* Максимум 2 строки */
+  text-overflow: ellipsis; /* Добавляем троеточие в конце обрезанной строки */
+}
+
+.cards-list li:nth-child(n + 5) {
+  display: none;
+}
+.vakansiya-cards {
+  position: relative;
+  background: #f5f5f8;
+  border-radius: 8px;
+}
+
+.item-card__zoom {
+  transition: all 0.2s ease-in-out;
+  height: 250px;
+  width: 100%;
+  background-size: cover;
+  border-radius: 8px;
+  overflow: hidden;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.item-card__header {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  width: 100%;
+  padding: 0 !important;
+}
+
+.item-card__title {
+  transition: all 0.2s ease-in-out;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+  padding: 10px 10px 3px 10px;
+  color: #000000;
+}
+
+.item-card__body {
+  padding: 0 10px 10px 10px;
+}
+.item-card:hover .item-card__zoom {
+  transform: scale(1.1);
+}
+
+.item-card:hover .item-card__title {
+  color: #fadf13;
+}
+.custom-badge {
+  position: absolute;
+  font-size: 14px;
+  left: 0;
+  top: 0;
+  border-radius: 8px 0 8px 0;
+  background: #fadf13;
+  padding: 10px 20px 10px 20px;
+  color: #000;
+  font-weight: bold;
 }
