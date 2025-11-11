@@ -227,6 +227,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const menuBtn = document.querySelector('.menu-btn');
+  const description = document.querySelector('.description');
+
+  menuBtn.addEventListener('click', function(e) {
+    e.preventDefault();
+    description.classList.toggle('expanded');
+  });
+});
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const mainButton = document.getElementById("main-button");

@@ -1621,7 +1621,7 @@ header {
 .static-page-section-1-left-side h2 {
   font-size: 52px;
   line-height: 68px;
-  padding: 70px 0 20px 0;
+  padding: 0 0 20px 0;
 }
 .static-page-section-1-left-side p {
   font-size: 18px;
@@ -1665,8 +1665,8 @@ header {
 }
 .static-page-section-1-right-side-img img {
   border-radius: 20px;
-  max-width: 470px;
-  height: 210px;
+  max-width: 500px;
+  height: 250px;
   width: 100%;
   object-fit: cover;
 }
@@ -2047,8 +2047,8 @@ section h1 {
   color: #000;
 }
 
-#contactFirstRL a,
-#contactFirstRR a {
+#contactFirstRL a:not(.wp-tel-btn),
+#contactFirstRR a:not(.wp-tel-btn) {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 500;
@@ -2056,7 +2056,7 @@ section h1 {
   display: inline-block;
 }
 
-#contactFirstRL a {
+#contactFirstRL a:not(.wp-tel-btn){
   color: #000;
   text-decoration: none;
 }
@@ -2308,111 +2308,107 @@ canvas,
 img {
   overflow: hidden;
 }
-
-/* vakansii */
-/*vakansii*/
-
-.item-card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  border-radius: 3px;
-  color: black;
-  text-decoration:none;
-  overflow: hidden;
-}
-.cards-list {
-  font-size: 14px;
-  margin-top: 20px;
-}
-.cards-list ul {
-  padding: 8px 8px 8px 16px;
-  list-style: disc;
-}
-.cards-list li {
-  margin-bottom: 10px;
-  font-size: 16px !important;
-  list-style: disc;
-}
-.item-card__title {
-  display: -webkit-box; /* Включаем flex-контейнер в виде вебкит-бокса */
-  -webkit-box-orient: vertical; /* Ориентация бокса — вертикальная */
-  -webkit-line-clamp: 2; /* Максимум 2 строки */
-  overflow: hidden; /* Скрываем переполнение */
-  text-overflow: ellipsis; /* Добавляем троеточие в конце обрезанной строки */
-}
-
-.cards-list {
-  margin-top: 16px;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  display: -webkit-box;
-}
-
-.cards-list li {
-  -webkit-box-orient: vertical; /* Ориентация бокса — вертикальная */
-  -webkit-line-clamp: 1; /* Максимум 2 строки */
-  text-overflow: ellipsis; /* Добавляем троеточие в конце обрезанной строки */
-}
-
-.cards-list li:nth-child(n + 5) {
-  display: none;
-}
-.vakansiya-cards {
-  position: relative;
-  background: #f5f5f8;
-  border-radius: 8px;
-}
-
-.item-card__zoom {
-  transition: all 0.2s ease-in-out;
-  height: 250px;
-  width: 100%;
-  background-size: cover;
-  border-radius: 8px;
-  overflow: hidden;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.item-card__header {
+/* new vacancy */
+.job-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  padding: 28px;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  display: flex;
-  justify-content: start;
-  align-items: flex-end;
-  width: 100%;
-  padding: 0 !important;
 }
 
-.item-card__title {
-  transition: all 0.2s ease-in-out;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 1.2;
-  padding: 10px 10px 3px 10px;
-  color: #000000;
+.job-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
 }
 
-.item-card__body {
-  padding: 0 10px 10px 10px;
-}
-.item-card:hover .item-card__zoom {
-  transform: scale(1.1);
-}
-
-.item-card:hover .item-card__title {
-  color: #fadf13;
-}
-.custom-badge {
-  position: absolute;
-  font-size: 14px;
-  left: 0;
-  top: 0;
-  border-radius: 8px 0 8px 0;
+.job-logo {
   background: #fadf13;
-  padding: 10px 20px 10px 20px;
   color: #000;
-  font-weight: bold;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  transition: background 0.3s;
+}
+
+.job-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.company, .location {
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.perks {
+  margin-top: 14px;
+  color: #4b5563;
+}
+.perks p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 4px 0;
+  font-size: 0.88rem;
+}
+.perks i {
+  color: #000;
+  width: 17px;
+}
+
+
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 18px;
+}
+
+.apply-btn {
+  background: #fadf13;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 22px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.apply-btn:hover {
+  background: #000000;
+  transform: scale(1.05);
+  color: white;
+}
+
+.menu-btn {
+  background: #f3f4f6;
+  border: none;
+  color: #6b7280;
+  font-size: 18px;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.menu-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+.badge-logo{
+  position: absolute;
+  right: 20px;
+  top: 40px;
 }
